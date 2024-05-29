@@ -1,0 +1,191 @@
+/* Estilos generales */
+.contenedor-principal {
+    padding-top: auto; /* Ajusta el valor según la altura del header */
+    /* Otros estilos si son necesarios */
+}
+
+.Header {
+    width: 100%;
+    padding: 0px 0; /* Ajusta el padding según sea necesario */
+    text-align: center; /* Centra el texto horizontalmente */
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0; /* Ajusta la posición en la parte superior */
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilos para las secciones */
+.secciones {
+    /* Ajusta el margen superior para que los títulos sean visibles después de desplazarse */
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Reduce la altura para disminuir el espacio */
+    margin-bottom: 50px; /* Reduce el margen inferior para disminuir el espacio */
+    color: white;
+    background-size: cover; /* Hace que la imagen cubra toda el área manteniendo su proporción */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.secciones.seccion-inicio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px; /* Ajusta el margen inferior para acercar las secciones */
+}
+
+.presentacion {
+    flex: 1;
+    text-align: center;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px; /* Agrega margen entre la imagen y el texto */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para la sección de "Acerca de mí" */
+.secciones.seccion-acerca-de-mi {
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.secciones.seccion-acerca-de-mi h2 {
+    margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+}
+
+.secciones.seccion-acerca-de-mi p {
+    max-width: 600px; /* Establece un ancho máximo para el párrafo */
+    margin: 0 auto; /* Centra el párrafo horizontalmente */
+    text-align: justify; /* Justifica el texto */
+}
+
+/* Estilos para la sección de Mis Habilidades */
+.seccion-mis-habilidades {
+    margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+}
+
+.seccion-mis-habilidades h2 {
+    text-align: center;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Centra los logos verticalmente */
+    width: 100px; /* Tamaño del círculo */
+    height: 100px; /* Tamaño del círculo */
+    border-radius: 50%; /* Forma circular */
+    overflow: hidden;
+    margin: 10px; /* Espaciado entre los logos */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor del círculo */
+}
+
+.logo img {
+    max-width: 100%; /* Establece el tamaño máximo de la imagen al ancho del contenedor */
+    max-height: 100%; /* Establece el tamaño máximo de la imagen a la altura del contenedor */
+    object-fit: contain; /* Ajusta la imagen para que se ajuste completamente dentro del contenedor manteniendo su relación de aspecto */
+}
+
+/* Estilos para la sección de Proyectos */
+.seccion-proyectos {
+    margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+}
+
+.seccion-proyectos h2 {
+    text-align: center;
+}
+
+/* Estilos para las demás secciones */
+/* Agrega estilos para las demás secciones si es necesario */
+
+.secciones section:not(:first-child) {
+    margin-top: auto; /* Ajusta el margen superior entre las secciones */
+}
+
+.secciones h2 {
+    text-align: center; /* Centra horizontalmente el texto */
+}
+
+/* Estilos para los títulos h2 en las secciones debajo de la sección de Inicio */
+.secciones section:not(#inicio) h2 {
+    margin-bottom: 40px; /* Ajusta el margen inferior */
+}
+
+#contacto {
+    margin-top: 100px; /* Ajusta el margen superior para evitar que el footer tape la sección */
+}
+
+/* Estilos para la sección de inicio en dispositivos móviles */
+@media (max-width: 768px) {
+    #inicio {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Cambia la altura a 'auto' para permitir que la sección se ajuste dinámicamente */
+        padding: 20px; /* Ajusta el padding para dar más espacio */
+        margin-top: 50px; /* Ajusta el margen superior para bajar la sección */
+        color: white;
+    }
+
+    .circle {
+        width: 250px; /* Mantiene el mismo tamaño del círculo */
+        height: 250px; /* Mantiene el mismo tamaño del círculo */
+        margin-bottom: 20px; /* Ajusta el margen inferior */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 50%; /* Asegura que el contenedor sea circular */
+        margin-top: 20px; /* Ajusta la posición de la foto para que no sea tapada por la barra de navegación */
+    }
+
+    .circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ajusta la imagen para que se ajuste completamente dentro del contenedor circular */
+        border-radius: 50%; /* Asegura que la imagen sea circular */
+    }
+
+    .presentacion {
+        text-align: center;
+    }
+
+    .secciones.seccion-inicio {
+        margin-bottom: 20px;
+    }
+    /* Estilos para los logos en dispositivos móviles */
+    .logo {
+        width: 80px; /* Ajusta el tamaño del círculo para dispositivos móviles */
+        height: 80px; /* Ajusta el tamaño del círculo para dispositivos móviles */
+        margin: 5px; /* Ajusta el margen entre los logos para dispositivos móviles */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Asegura que el contenedor sea circular */
+        overflow: hidden; /* Evita que la imagen se desborde del contenedor */
+    }
+
+    .logo img {
+        width: auto;
+        height: 100%; /* Ajusta la altura de la imagen para mantener su relación de aspecto */
+        object-fit: contain; /* Ajusta la imagen para que se ajuste completamente dentro del contenedor manteniendo su relación de aspecto */
+    }
+}
