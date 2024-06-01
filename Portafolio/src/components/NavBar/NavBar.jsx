@@ -1,35 +1,93 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap'; // Importa componentes de la barra de navegación de React Bootstrap
-import Container from 'react-bootstrap/Container'; // Importa el componente Container de React Bootstrap
-import "./NavBar.css"; // Importa los estilos CSS para la barra de navegación
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import "./NavBar.css";
 
 export function NavBar() {
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  // Función para ajustar el desplazamiento después de hacer clic en un enlace
-  const handleNavLinkClick = (event, targetId) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
-    const targetElement = document.getElementById(targetId); // Obtiene el elemento de destino utilizando su ID
-    if (targetElement) { // Verifica si el elemento de destino existe
-      window.scrollTo({
-        top: targetElement.offsetTop - 100, // Ajusta el desplazamiento para tener un poco de espacio sobre el título
-        behavior: "smooth" // Desplazamiento suave
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      let selectedSectionId = null;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          selectedSectionId = section.id;
+        }
       });
+
+      setSelectedOption(selectedSectionId);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleNavLinkClick = (event, targetId) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: "smooth"
+      });
+    }
+
+    // Solo actualiza el estado si la opción seleccionada es diferente
+    if (selectedOption !== targetId) {
+      setSelectedOption(targetId);
     }
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary"> 
-      <Container> 
-        <Navbar.Brand href="#home">{"< EP />"}</Navbar.Brand> 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
-        <Navbar.Collapse id="basic-navbar-nav"> 
-          <Nav className="me-auto"> 
-            {/* Enlaces de navegación con identificadores y manejadores de eventos para el clic */}
-            <Nav.Link onClick={(e) => handleNavLinkClick(e, 'inicio')} href="#inicio">Inicio</Nav.Link>
-            <Nav.Link onClick={(e) => handleNavLinkClick(e, 'acerca-de-mi')} href="#acerca-de-mi">Acerca de mi</Nav.Link>
-            <Nav.Link onClick={(e) => handleNavLinkClick(e, 'mis-habilidades')} href="#mis-habilidades">Mis Habilidades</Nav.Link>
-            <Nav.Link onClick={(e) => handleNavLinkClick(e, 'proyectos')} href="#proyectos">Proyectos</Nav.Link>
-            <Nav.Link onClick={(e) => handleNavLinkClick(e, 'contacto')} href="#contacto">Contactos</Nav.Link>
+    <Navbar expand="lg" className="custom-navbar">
+      <Container>
+        <Navbar.Brand href="#home">
+          <span className="brand-text">{"<VR/>"}</span> {/* Texto <VR/> */}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'inicio')} 
+              href="#inicio" 
+              className={selectedOption === 'inicio' ? 'selected' : ''}
+            >
+              Inicio
+            </Nav.Link>
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'acerca-de-mi')} 
+              href="#acerca-de-mi" 
+              className={selectedOption === 'acerca-de-mi' ? 'selected' : ''}
+            >
+              Acerca de mi
+            </Nav.Link>
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'mis-habilidades')} 
+              href="#mis-habilidades" 
+              className={selectedOption === 'mis-habilidades' ? 'selected' : ''}
+            >
+              Mis Habilidades
+            </Nav.Link>
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'proyectos')} 
+              href="#proyectos" 
+              className={selectedOption === 'proyectos' ? 'selected' : ''}
+            >
+              Proyectos
+            </Nav.Link>
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'contacto')} 
+              href="#contacto" 
+              className={selectedOption === 'contacto' ? 'selected' : ''}
+            >
+              Contacto
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
