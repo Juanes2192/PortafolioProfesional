@@ -46,13 +46,13 @@ export function NavBar() {
 
   return (
     <Navbar expand="lg" className="custom-navbar">
-      <Container>
-        <Navbar.Brand href="#home">
-          <span className="brand-text">{"<VR/>"}</span> {/* Texto <VR/> */}
+      <Container fluid>
+        <Navbar.Brand href="#inicio">
+          <span className="brand-text">{"< EP />"}</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse id="basic-navbar-nav" className="nav-center">
+          <Nav className="mx-auto">
             <Nav.Link 
               onClick={(e) => handleNavLinkClick(e, 'inicio')} 
               href="#inicio" 
@@ -80,6 +80,13 @@ export function NavBar() {
               className={selectedOption === 'proyectos' ? 'selected' : ''}
             >
               Proyectos
+            </Nav.Link>
+            <Nav.Link 
+              onClick={(e) => handleNavLinkClick(e, 'formacion')} 
+              href="#formacion" 
+              className={selectedOption === 'formacion' ? 'selected' : ''}
+            >
+              Formacion
             </Nav.Link>
             <Nav.Link 
               onClick={(e) => handleNavLinkClick(e, 'contacto')} 

@@ -38,8 +38,8 @@ function App() {
           <div className='secciones seccion-inicio'>
             <div className="presentacion">
               <h3 className='presentacion saludo'>¡Hola!</h3>
-              <h1 className='presentacion nombre'>Soy Valeria Ramirez</h1>
-              <h3 className='presentacion profesion'>Desarolladora Front-end</h3>
+              <h1 className='presentacion nombre'>Soy Esteban Perdomo</h1>
+              <h3 className='presentacion profesion'>Desarollador Front-end</h3>
               <button className="btn btn-primary">Ver CV</button>
             </div>
           </div>
@@ -48,11 +48,11 @@ function App() {
         <section id="acerca-de-mi">
           <div className='secciones seccion-acerca-de-mi'>
             <h2><strong>Acerca de mi</strong></h2>
-            <h5>Soy Valeria Ramirez / Desarrolladora Frontend / Tecnologa en desarrollo de software</h5>
-            <p>Soy una Desarrolladora Front-End Junior con habilidades en HTML, CSS y JavaScript.
-              Destaco en el diseño y desarrollo de interfaces atractivas y funcionales utilizando tecnologías como Bootstrap y React.
-              Apasionada por aprender y contribuir en proyectos innovadores,
-              estoy comprometida con el crecimiento continuo y la excelencia en mi trabajo.</p>
+            <h5>Soy Esteban Perdomo / Desarrollador Frontend / Tecnologo en desarrollo de software</h5>
+            <p>Soy Desarrollador Front-End Junior con habilidades en HTML, CSS y JavaScript.
+              Destaco en el diseño y desarrollo de interfaces atractivas y funcionales utilizando tecnologías como Bootstrap y React. Me
+              Apasiona aprender y contribuir en proyectos innovadores,
+              estoy comprometido con el crecimiento continuo y la excelencia en mi trabajo.</p>
           </div>
         </section>
 
@@ -100,18 +100,32 @@ function App() {
           </div>
         </section>
 
+        <section id="formacion">
+          <div className='secciones seccion-formacion'>
+            <h2><strong>Formacion</strong></h2>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+            <p>ESTOY EN Formacion</p>
+          </div>
+        </section>
+
         <section id="contacto">
           <div className='secciones seccion-contacto'>
             <h2><strong>Contacto</strong></h2>
             <div className="input-container">
               <div className="input-with-icon">
                 <img src={iconoLinkedln} alt="Icono linkedln" className="icono-linkedln" />
-                <input type="text" className="form-control input-text" value="Valeria Ramirez Marin" readOnly />
-                <img src={iconoEnviar} alt="Icono Enviar" className="icono-Enviar" id="iconoEnviar" onClick={() => window.open('https://www.linkedin.com/in/valeria-ramirez-marin-993171305', '_blank')} />
+                <input type="text" className="form-control input-text" value="Juan Esteban Perdomo Leiva" readOnly />
+                <img src={iconoEnviar} alt="Icono Enviar" className="icono-Enviar" id="iconoEnviar" onClick={() => window.open('https://www.linkedin.com/in/juan-esteban-perdomo-leiva-280292302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ', '_blank')} />
               </div>
               <div className="input-with-icon">
                 <img src={iconoemail} alt="Icono Email" className="icono-email" />
-                <input type="email" className="form-control input-email" id="exampleInputEmail1" aria-describedby="emailHelp" value="valeriaramirezmarin52@gmail.com" readOnly />
+                <input type="email" className="form-control input-email" id="exampleInputEmail1" aria-describedby="emailHelp" value="juanestebanperdomoleiva@gmail.com" readOnly />
                 <img src={iconoCopy} alt="Icono Copy" className="icono-copy" id="iconoCopy" onClick={handleCopyEmail} />
               </div>
             </div>
@@ -121,7 +135,7 @@ function App() {
 
         <section id="derechos" className="seccion-derechos">
           <div className='secciones'>
-            <p>&copy; {new Date().getFullYear()} Valeria Ramirez. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Esteban Perdomo. Todos los derechos reservados.</p>
           </div>
         </section>
       </div>
